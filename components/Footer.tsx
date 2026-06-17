@@ -9,8 +9,8 @@ export function Footer() {
           <span className="text-slate-600">.dev</span>
         </p>
 
-        <p className="text-xs text-slate-700 order-last md:order-none">
-          © {year} Heitor Borba Marini · Feito com Next.js & Tailwind CSS
+        <p className="text-xs text-slate-500 order-last md:order-none">
+          © {year} Heitor Borba Marini
         </p>
 
         <div className="flex gap-6">
