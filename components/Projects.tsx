@@ -44,19 +44,11 @@ const projects: Project[] = [
     status: "LIVE",
   },
   {
-    name: "Portal Vendedor Viba",
+    name: "Souza Martins",
     description:
-      "Portal B2B para a rede de vendedores da Viba Holding. Dashboard com gestão de pedidos, catálogo de ofertas e relatórios integrados ao Sankhya ERP.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/HeitorBMarini",
-    status: "PROD",
-  },
-  {
-    name: "vibaApi",
-    description:
-      "Backend Node.js com integrações completas com Sankhya ERP e Bitrix24 CRM. Automações de vendas, disparo de e-mails de inadimplência e bots.",
-    tech: ["Node.js", "JavaScript", "MySQL", "PM2", "Linux"],
-    github: "https://github.com/HeitorBMarini",
+      "Site institucional desenvolvido em TypeScript e Next.js. Interface moderna e responsiva com múltiplas seções, animações e deploy em produção.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/HeitorBMarini/souza-martins",
     status: "PROD",
   },
   {
@@ -111,7 +103,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group p-6 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-blue-500/25 hover:bg-slate-900/60 transition-all duration-300 flex flex-col cursor-pointer"
+              className={`group p-6 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-blue-500/25 hover:bg-slate-900/60 transition-all duration-300 flex flex-col cursor-pointer${i === projects.length - 1 ? " lg:col-start-2" : ""}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
