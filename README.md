@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">heitor.dev — Portfólio Pessoal</h1>
 
-## Getting Started
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/123084599?v=4" width="96" style="border-radius:50%" alt="Heitor Borba Marini" />
+</p>
 
-First, run the development server:
+<p align="center">
+  <strong>Next.js 16 · Tailwind CSS v4 · Framer Motion · TypeScript</strong>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<p align="center">
+  <a href="https://portfolio-heitor-mocha.vercel.app" target="_blank">🌐 Ver ao vivo</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/heitor-borba-marini/" target="_blank">💼 LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:heitor.marini07@gmail.com">✉️ E-mail</a>
+</p>
+
+---
+
+## ✨ Destaques
+
+- **Hero animado** — orbs com blur em movimento, efeito typewriter ciclando entre roles e ícone `</>` com ring giratório
+- **Stack interativa** — terminal estilo macOS com 7 categorias e badges animados por categoria
+- **Projetos em destaque** — 5 cards clicáveis com status badge (LIVE / PROD / OPEN SOURCE)
+- **Tipografia mista** — Geist Sans + Lora itálico nas headings para contraste editorial
+- **100% responsivo** — layout adaptado para mobile, tablet e desktop
+- **Dark theme** — paleta azul/índigo com orbs animados no fundo
+
+## 🛠 Stack
+
+| Camada | Tecnologia |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Estilização | Tailwind CSS v4 |
+| Animações | Framer Motion |
+| Tipografia | Geist Sans + Lora (Google Fonts) |
+| Deploy | Vercel |
+| Linguagem | TypeScript |
+
+## 📁 Estrutura
+
+```
+portfolio-heitor/
+├── app/
+│   ├── layout.tsx       # Metadata SEO + fontes
+│   ├── page.tsx         # Composição das seções
+│   └── globals.css      # Tema dark + keyframes
+└── components/
+    ├── Navbar.tsx        # Navbar fixa com blur on scroll
+    ├── Hero.tsx          # Fullscreen com orbs + typewriter
+    ├── About.tsx         # Bio + foto
+    ├── Stack.tsx         # Terminal interativo de tecnologias
+    ├── Projects.tsx      # Grid de projetos em destaque
+    ├── Contact.tsx       # Links de contato animados
+    ├── Footer.tsx        # Rodapé
+    └── icons.tsx         # SVGs de GitHub e LinkedIn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Rodando localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git clone https://github.com/HeitorBMarini/portfolio-heitor.git
+cd portfolio-heitor
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">Desenvolvido por <strong>Heitor Borba Marini</strong> · São Paulo, Brasil</p>
