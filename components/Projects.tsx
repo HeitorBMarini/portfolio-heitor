@@ -92,8 +92,16 @@ export function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
+          {projects.map((project, i) => {
+            const colClass =
+              i < 3
+                ? "lg:col-span-2"
+                : i === projects.length - 2
+                ? "lg:col-span-2 lg:col-start-2"
+                : "lg:col-span-2";
+
+            return (
             <motion.a
               key={project.name}
               href={project.url ?? project.github}
@@ -103,7 +111,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`group p-6 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-blue-500/25 hover:bg-slate-900/60 transition-all duration-300 flex flex-col cursor-pointer${i === projects.length - 1 ? " lg:col-start-2" : ""}`}
+              className={`group p-6 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-blue-500/25 hover:bg-slate-900/60 transition-all duration-300 flex flex-col cursor-pointer ${colClass}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -151,7 +159,8 @@ export function Projects() {
                 ))}
               </div>
             </motion.a>
-          ))}
+            );
+          })}
         </div>
 
         <motion.div
