@@ -1,100 +1,128 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 const links = [
   { href: "#about", label: "Sobre" },
-  { href: "#stack", label: "Stack" },
+  { href: "#experience", label: "Experiência" },
   { href: "#projects", label: "Projetos" },
+  { href: "#skills", label: "Tecnologias" },
   { href: "#contact", label: "Contato" },
 ];
+
+function ThemeToggle() {
+  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
+
+  useEffect(() => {
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+  }, []);
+
+  const toggle = () => {
+    const next = theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch {}
+    setTheme(next);
+  };
+
+  return (
+    <button
+      onClick={toggle}
+      aria-label={theme === "light" ? "Usar tema escuro" : "Usar tema claro"}
+      className="w-9 h-9 grid place-items-center rounded-full border border-line text-muted hover:text-fg hover:border-accent/50 transition-colors cursor-pointer"
+    >
+      {theme === "light" ? <Moon size={15} /> : <Sun size={15} />}
+    </button>
+  );
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", handler);
+    handler();
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
   return (
     <>
-      <motion.header
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#07070f]/80 backdrop-blur-md border-b border-slate-800/60"
-            : ""
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+          scrolled || menuOpen
+            ? "bg-bg/85 backdrop-blur-md border-b border-line"
+            : "border-b border-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
           <a
             href="#"
-            className="font-mono text-sm text-blue-400 hover:text-blue-300 transition-colors"
+            aria-label="Início"
+            className="w-9 h-9 grid place-items-center rounded-md bg-fg text-bg font-serif text-base leading-none"
           >
-            heitor<span className="text-slate-600">.dev</span>
+            HM
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7 ml-auto">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-400 hover:text-slate-100 transition-colors"
+                className="text-sm text-muted hover:text-fg transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <a
-            href="#contact"
-            className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 text-blue-400 text-sm hover:bg-blue-500/10 transition-colors"
-          >
-            Contratar
-          </a>
-
-          <button
-            className="md:hidden text-slate-400 hover:text-slate-100 transition-colors"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </motion.header>
-
-      {menuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed inset-0 z-40 bg-[#07070f]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
-        >
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-2xl text-slate-300 hover:text-blue-400 transition-colors font-medium"
+          <div className="flex items-center gap-2 md:ml-2 ml-auto">
+            <ThemeToggle />
+            <button
+              className="md:hidden w-9 h-9 grid place-items-center text-muted hover:text-fg transition-colors"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuOpen}
             >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="mt-4 px-6 py-2.5 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-500 transition-colors"
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+        <motion.div
+          aria-hidden
+          style={{ scaleX: progress, background: "linear-gradient(90deg, var(--accent), var(--accent-2))" }}
+          className="absolute left-0 right-0 -bottom-px h-px origin-left"
+        />
+      </header>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-16 inset-x-0 z-40 bg-bg border-b border-line px-6 py-6 flex flex-col gap-1 md:hidden"
           >
-            Contratar
-          </a>
-        </motion.div>
-      )}
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="py-3 font-serif text-2xl text-fg hover:text-accent transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </>
   );
 }

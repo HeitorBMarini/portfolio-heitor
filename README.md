@@ -20,41 +20,39 @@
 
 ## ✨ Destaques
 
-- **Hero animado** — orbs com blur em movimento, efeito typewriter ciclando entre roles e ícone `</>` com ring giratório
-- **Stack interativa** — terminal estilo macOS com 7 categorias e badges animados por categoria
-- **Projetos em destaque** — 5 cards clicáveis com status badge (LIVE / PROD / OPEN SOURCE)
-- **Tipografia mista** — Geist Sans + Lora itálico nas headings para contraste editorial
-- **100% responsivo** — layout adaptado para mobile, tablet e desktop
-- **Dark theme** — paleta azul/índigo com orbs animados no fundo
+- **Hero em Three.js** — esfera de partículas com ruído 3D no shader, que respira e inclina seguindo o mouse (pausa fora da tela e respeita `prefers-reduced-motion`)
+- **Experiência** — o trabalho na Viba Holding descrito por entregas reais
+- **Projetos como estudo de caso** — índice numerado + contexto, o que entreguei e tecnologias
+- **Tecnologias "onde usei"** — filtro por Viba, clientes e projetos pessoais, com as principais marcadas
+- **Tema claro e escuro** — preto e azul, sem piscar no carregamento
+- **Detalhes** — nome revelado por máscara, barra de progresso de rolagem, spotlight que segue o cursor nos cards
 
 ## 🛠 Stack
 
 | Camada | Tecnologia |
 |---|---|
 | Framework | Next.js 16 (App Router) |
-| Estilização | Tailwind CSS v4 |
+| Estilização | Tailwind CSS v4 (tokens em CSS vars) |
+| 3D | Three.js (shader próprio) |
 | Animações | Framer Motion |
-| Tipografia | Geist Sans + Lora (Google Fonts) |
+| Tipografia | DM Serif Display + Manrope |
 | Deploy | Vercel |
-| Linguagem | TypeScript |
 
 ## 📁 Estrutura
 
 ```
-portfolio-heitor/
-├── app/
-│   ├── layout.tsx       # Metadata SEO + fontes
-│   ├── page.tsx         # Composição das seções
-│   └── globals.css      # Tema dark + keyframes
-└── components/
-    ├── Navbar.tsx        # Navbar fixa com blur on scroll
-    ├── Hero.tsx          # Fullscreen com orbs + typewriter
-    ├── About.tsx         # Bio + foto
-    ├── Stack.tsx         # Terminal interativo de tecnologias
-    ├── Projects.tsx      # Grid de projetos em destaque
-    ├── Contact.tsx       # Links de contato animados
-    ├── Footer.tsx        # Rodapé
-    └── icons.tsx         # SVGs de GitHub e LinkedIn
+components/
+├── Navbar.tsx       # Navbar fixa, tema e progresso de rolagem
+├── Hero.tsx         # Apresentação + cena 3D
+├── HeroScene.tsx    # Three.js: esfera de partículas
+├── About.tsx        # Bio + foto
+├── Experience.tsx   # Linha do tempo profissional
+├── Projects.tsx     # Estudos de caso
+├── Skills.tsx       # Tecnologias com filtro "onde usei"
+├── Contact.tsx      # E-mail com copiar + redes
+├── Section.tsx      # Section/Reveal/Tag compartilhados
+├── Spotlight.tsx    # Card com brilho que segue o cursor
+└── Footer.tsx
 ```
 
 ## 🚀 Rodando localmente

@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Lora } from "next/font/google";
+import { DM_Serif_Display, Manrope, Geist_Mono } from "next/font/google";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+});
+
+const dmSerif = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const geistMono = Geist_Mono({
@@ -12,24 +20,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
-
 export const metadata: Metadata = {
-  title: "Heitor Borba Marini — Full Stack Developer",
+  title: "Heitor Borba Marini · Desenvolvedor Full Stack",
   description:
-    "Portfólio de Heitor Borba Marini, Full Stack Developer baseado em São Paulo, Brasil. Especialista em Next.js, React, TypeScript e Node.js.",
+    "Desenvolvedor full stack em São Paulo. Construo portais, painéis e integrações entre ERP e CRM com Next.js, React, TypeScript e Node.js.",
   openGraph: {
-    title: "Heitor Borba Marini — Full Stack Developer",
+    title: "Heitor Borba Marini · Desenvolvedor Full Stack",
     description:
-      "Full Stack Developer baseado em São Paulo. Construo interfaces modernas, APIs robustas e sistemas integrados.",
+      "Portais, painéis e integrações entre ERP e CRM com Next.js, React, TypeScript e Node.js.",
     type: "website",
     images: ["https://avatars.githubusercontent.com/u/123084599?v=4"],
   },
 };
+
+// Aplica o tema salvo antes da primeira pintura, para não piscar.
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='dark'}})()`;
 
 export default function RootLayout({
   children,
@@ -37,9 +42,16 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} ${lora.variable}`}
+      data-theme="dark"
+      suppressHydrationWarning
+      className={`${manrope.variable} ${dmSerif.variable} ${geistMono.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="grain antialiased font-sans">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
