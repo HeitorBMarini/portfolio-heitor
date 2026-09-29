@@ -29,7 +29,7 @@ export const projects: Project[] = [
     kind: "Projeto pessoal · API do Spotify",
     tagline: "Sua retrospectiva do Spotify em qualquer época do ano, com card pronto para os stories.",
     about:
-      "Conecta com o Spotify e mostra seus artistas e músicas favoritos por período, os gráficos do seu gosto e o horário em que você mais ouve. Como a API só libera login para 5 contas em modo de desenvolvimento, o site tem uma demonstração aberta e um link compartilhável que funciona sem login.",
+      "Conecta com o Spotify e mostra seus artistas e músicas favoritos por período, os gráficos do seu gosto e o horário em que você mais ouve. Como a API só libera login para 5 contas em modo de desenvolvimento, a demonstração aberta mostra a minha trilha real, e um link compartilhável permite ver a de qualquer pessoa sem login.",
     delivered: [
       "Login com Spotify pelo fluxo Authorization Code no servidor, com tokens em cookies httpOnly e renovação automática.",
       "Top artistas e músicas em 4 semanas, 6 meses ou 1 ano, com gráficos de décadas, artistas e um relógio de escuta de 24 horas.",
@@ -183,7 +183,7 @@ export function Projects() {
           Produto, sites para clientes e <em className="text-accent">projetos próprios.</em>
         </>
       }
-      intro="Todos publicados: dá para clicar e explorar. Nas demos de produto (trilha, Pipeline IA e Painel SaaS), os dados de exemplo são fictícios."
+      intro="Todos publicados: dá para clicar e explorar. Nas demos do Pipeline IA e do Painel SaaS, os dados de exemplo são fictícios."
     >
       {/* Índice */}
       <Reveal>
