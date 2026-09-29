@@ -3,6 +3,7 @@ import { GithubIcon } from "@/components/icons";
 import { Section, Reveal, Tag } from "@/components/Section";
 import { Spotlight } from "@/components/Spotlight";
 import { LivePreview } from "@/components/LivePreview";
+import { VideoPreview } from "@/components/VideoPreview";
 
 type Project = {
   slug: string;
@@ -16,10 +17,32 @@ type Project = {
   url?: string;
   /** Página local exibida como miniatura ao vivo no card */
   preview?: string;
+  /** Vídeo curto da demo, com imagem de capa */
+  video?: { src: string; poster: string };
   urlLabel?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "pipeline-ia",
+    name: "Pipeline IA",
+    kind: "Protótipo próprio · IA aplicada",
+    tagline: "Um CRM com funil de vendas e um assistente de IA que não só responde: age no funil.",
+    about:
+      "Vendedor perde tempo decidindo onde focar, lembrando quem está parado e reescrevendo o mesmo follow-up. Juntei isso num CRM em que a IA analisa cada lead e um agente com ferramentas consulta e atualiza o funil. A demo pública roda em modo demonstração, com dados fictícios.",
+    delivered: [
+      "Funil kanban com arrastar e soltar e métricas em tempo real: valor em aberto, previsão ponderada e negócios parados.",
+      "Análise de cada lead com nota de 0 a 100, motivos e próxima ação, em saída estruturada validada com Zod.",
+      "Assistente de vendas com ferramentas (tool use): busca leads, lê o histórico, move cards e registra notas, e cada mudança aparece no quadro.",
+      "Follow-ups personalizados a partir do histórico do lead.",
+      "Modo demonstração por regras quando não há chave da API, para a demo nunca quebrar.",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Claude API", "Zod"],
+    github: "https://github.com/HeitorBMarini/pipeline-ia",
+    url: "https://pipeline-ia-xi.vercel.app",
+    urlLabel: "Abrir a demo",
+    video: { src: "/videos/pipeline-ia.mp4", poster: "/videos/pipeline-ia.jpg" },
+  },
   {
     slug: "painel-saas",
     name: "Painel SaaS",
@@ -135,11 +158,11 @@ export function Projects() {
           Produto, sites para clientes e <em className="text-accent">projetos próprios.</em>
         </>
       }
-      intro="Todos publicados. O Painel SaaS é uma demo com dados fictícios: dá para clicar e explorar."
+      intro="Todos publicados. Pipeline IA e Painel SaaS são demos com dados fictícios: dá para clicar e explorar."
     >
       {/* Índice */}
       <Reveal>
-        <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden mb-16">
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line rounded-2xl overflow-hidden mb-16">
           {projects.map((p, i) => (
             <li key={p.slug} className="bg-bg">
               <a
@@ -191,6 +214,11 @@ export function Projects() {
                       {addressOf(p)}
                     </span>
                   </div>
+                  {p.video && (
+                    <div className="border-b border-line">
+                      <VideoPreview src={p.video.src} poster={p.video.poster} title={`Vídeo da demo de ${p.name}`} />
+                    </div>
+                  )}
                   {p.preview && (
                     <a
                       href={p.url ?? p.preview}
