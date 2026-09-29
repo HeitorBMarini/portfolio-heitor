@@ -63,6 +63,26 @@ export const projects: Project[] = [
     preview: "/demos/painel-saas.html",
   },
   {
+    slug: "weather",
+    name: "Weather App",
+    kind: "Projeto pessoal",
+    tagline: "Clima agora, próximas 24 horas e 5 dias para a sua localização ou qualquer cidade.",
+    about:
+      "Um app de previsão do tempo feito para ser usado de verdade: abre na sua localização (ou em São Paulo, se ela não for liberada), busca qualquer cidade do mundo e mostra os horários no fuso local de cada lugar.",
+    delivered: [
+      "Card principal com fundo que muda conforme o clima e se é dia ou noite.",
+      "Gráfico das próximas 24 horas com temperatura, sensação térmica e chance de chuva.",
+      "Busca de cidades com Ctrl + K, histórico e favoritos; a cidade fica na URL para compartilhar.",
+      "Chave da OpenWeather protegida no servidor, com cache das respostas por 10 minutos.",
+      "Horários convertidos para o fuso da cidade consultada e tema claro/escuro com um clique.",
+    ],
+    tech: ["Next.js", "TypeScript", "TanStack Query", "Recharts", "Tailwind CSS", "OpenWeather API"],
+    github: "https://github.com/HeitorBMarini/weather-app",
+    url: "https://weather-app-git-dev-heitorbmarinis-projects.vercel.app",
+    urlLabel: "Abrir o app",
+    video: { src: "/videos/weather-app.mp4", poster: "/videos/weather-app.jpg" },
+  },
+  {
     slug: "safed",
     name: "SafeD",
     kind: "Site para cliente",
@@ -108,21 +128,6 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/HeitorBMarini/souza-martins",
-  },
-  {
-    slug: "weather",
-    name: "Weather App",
-    kind: "Projeto pessoal",
-    tagline: "Previsão do tempo em tempo real por cidade.",
-    about:
-      "Consulta uma API de clima e mostra temperatura, umidade e condições atuais da cidade buscada.",
-    delivered: [
-      "Consumo da API OpenWeather com tratamento de erro para cidades inexistentes.",
-      "Interface simples, focada na leitura rápida dos dados.",
-    ],
-    tech: ["Next.js", "TypeScript", "OpenWeather API"],
-    github: "https://github.com/HeitorBMarini/weather-app",
-    url: "https://weather-app-git-dev-heitorbmarinis-projects.vercel.app",
   },
   {
     slug: "busca-cep",
