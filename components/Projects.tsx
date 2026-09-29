@@ -164,9 +164,9 @@ export function Projects() {
           <Reveal key={p.slug}>
             <Spotlight
               id={`project-${p.slug}`}
-              className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-14 rounded-2xl border border-line bg-surface p-6 md:p-10"
+              className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-14 rounded-2xl border border-line bg-surface p-6 md:p-10"
             >
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="font-mono text-sm text-accent">
                     {String(i + 1).padStart(2, "0")}
@@ -237,7 +237,7 @@ export function Projects() {
                 </div>
               </div>
 
-              <div className="space-y-7">
+              <div className="space-y-7 min-w-0">
                 <div>
                   <h4 className="text-[11px] font-semibold tracking-[0.18em] uppercase text-faint mb-2">
                     O contexto

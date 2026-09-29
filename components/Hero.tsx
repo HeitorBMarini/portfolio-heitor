@@ -95,12 +95,13 @@ export function Hero() {
           </motion.p>
 
           <motion.p {...fade(0.55)} className="text-muted leading-relaxed max-w-xl mb-10">
-            Hoje, como Analista de Sistemas na{" "}
-            <span className="text-fg">ViBA Holding</span>, cuido das
-            integrações entre <span className="text-fg">Sankhya</span>,{" "}
-            <span className="text-fg">Bitrix24</span> e APIs REST, do
-            monitoramento com Grafana e dos servidores no Azure. Antes, foram
-            dois anos fazendo sites com foco em SEO na Doutores da Web.
+            Desenvolvo aplicações web e mobile com{" "}
+            <span className="text-fg">Next.js</span>,{" "}
+            <span className="text-fg">React</span> e{" "}
+            <span className="text-fg">Node.js</span>, integro sistemas via APIs
+            REST, automatizo processos e crio soluções com{" "}
+            <span className="text-fg">IA generativa</span>, com dados em SQL e
+            monitoramento em tempo real.
           </motion.p>
 
           <motion.div {...fade(0.65)} className="flex flex-wrap items-center gap-3">
