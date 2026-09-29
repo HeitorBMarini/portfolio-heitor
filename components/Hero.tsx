@@ -10,7 +10,7 @@ const HeroScene = dynamic(() => import("@/components/HeroScene"), { ssr: false }
 const facts = [
   { label: "Agora", value: "Analista de Sistemas na ViBA Holding" },
   { label: "Stack principal", value: "Next.js · React · TypeScript · Node.js" },
-  { label: "Formação", value: "ADS, FIAP" },
+  { label: "Formação", value: "Análise e Desenvolvimento de Sistemas (ADS), FIAP · 2021 – 2023" },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
