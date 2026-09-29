@@ -148,6 +148,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/HeitorBMarini/souza-martins",
+    url: "https://serralheriasm.com.br/",
   },
   {
     slug: "busca-cep",
