@@ -24,6 +24,26 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "trilha",
+    name: "trilha",
+    kind: "Projeto pessoal · API do Spotify",
+    tagline: "Sua retrospectiva do Spotify em qualquer época do ano, com card pronto para os stories.",
+    about:
+      "Conecta com o Spotify e mostra seus artistas e músicas favoritos por período, os gráficos do seu gosto e o horário em que você mais ouve. Como a API só libera login para 5 contas em modo de desenvolvimento, o site tem uma demonstração aberta e um link compartilhável que funciona sem login.",
+    delivered: [
+      "Login com Spotify pelo fluxo Authorization Code no servidor, com tokens em cookies httpOnly e renovação automática.",
+      "Top artistas e músicas em 4 semanas, 6 meses ou 1 ano, com gráficos de décadas, artistas e um relógio de escuta de 24 horas.",
+      "Card de story 1080×1920 gerado no navegador com canvas, pronto para baixar ou compartilhar.",
+      "Link compartilhável sem banco de dados: a retrospectiva vai comprimida no # da URL e nunca passa pelo servidor.",
+      "Playlist com as top músicas criada direto na conta, e adaptação às restrições de 2026 da API (ex.: gêneros que deixaram de vir).",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "shadcn/ui", "Recharts", "Spotify Web API", "OAuth 2.0"],
+    github: "https://github.com/HeitorBMarini/trilha",
+    url: "https://trilha-inky.vercel.app",
+    urlLabel: "Abrir o app",
+    video: { src: "/videos/trilha.mp4", poster: "/videos/trilha.jpg" },
+  },
+  {
     slug: "pipeline-ia",
     name: "Pipeline IA",
     kind: "Protótipo próprio · IA aplicada",
@@ -163,7 +183,7 @@ export function Projects() {
           Produto, sites para clientes e <em className="text-accent">projetos próprios.</em>
         </>
       }
-      intro="Todos publicados. Pipeline IA e Painel SaaS são demos com dados fictícios: dá para clicar e explorar."
+      intro="Todos publicados: dá para clicar e explorar. Nas demos de produto (trilha, Pipeline IA e Painel SaaS), os dados de exemplo são fictícios."
     >
       {/* Índice */}
       <Reveal>
