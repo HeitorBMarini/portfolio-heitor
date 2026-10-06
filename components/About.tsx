@@ -38,9 +38,9 @@ export function About() {
           </p>
           <p>
             No mobile, desenvolvo com{" "}
-            <span className="text-fg">React Native e Expo</span>: reescrevi o
-            app de vendas do time comercial, com catálogo, simulação de
-            pagamento e proposta enviada ao CRM e ao ERP direto do celular.
+            <span className="text-fg">React Native e Expo</span>: apps com o
+            mesmo código no celular e na web, do catálogo ao checkout, com
+            regras de preço, parcelamento e integração com APIs.
           </p>
           <p>
             Antes disso, passei dois anos na Doutores da Web fazendo sites com

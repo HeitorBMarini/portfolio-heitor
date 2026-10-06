@@ -44,23 +44,24 @@ export const projects: Project[] = [
     video: { src: "/videos/trilha.mp4", poster: "/videos/trilha.jpg" },
   },
   {
-    slug: "skinsales",
-    name: "SkinSales",
-    kind: "App mobile · ViBA Holding",
-    tagline: "O app de vendas do time comercial, refeito do zero com Expo: do catálogo à proposta enviada ao CRM e ao ERP, pelo celular.",
+    slug: "veltra-mx",
+    name: "Veltra MX",
+    kind: "App mobile · e-commerce",
+    tagline: "Loja de motocross no celular: da escolha da moto ao pedido pago, com financiamento simulado e frete pelo CEP.",
     about:
-      "Os vendedores montavam propostas num app antigo, com regras de preço e pagamento espalhadas e a senha salva no aparelho. Reescrevi o app com React Native e Expo, mantendo as regras de negócio, corrigindo os bugs que achei no caminho e fechando falhas de segurança na API. A demo pública roda em modo demonstração, com dados fictícios.",
+      "Criei uma loja fictícia de motocross para mostrar um e-commerce mobile completo em React Native. Motos de pista e trilha, equipamentos e peças, com as regras que uma loja de verdade tem: preço no Pix, parcelamento, financiamento, cupom, frete por região e acompanhamento do pedido. Tudo roda no celular e na web com o mesmo código.",
     delivered: [
-      "Catálogo por tabela de preço com checagens do cliente na hora: inadimplência, regras de campanha, distribuidor e primeira compra.",
-      "Carrinho que continua salvo com o app fechado e simulador de pagamento com entrada, cartão, faturamento e financiamento com carência e IOF.",
-      "Proposta enviada direto ao Bitrix24 e ao Sankhya, com PDF gerado no aparelho para compartilhar com o cliente.",
-      "Dashboard com gráficos de vendas, ranking e inadimplência, tema claro e escuro e identidade visual de cada marca.",
-      "Login com JWT no armazenamento seguro do aparelho, sem guardar a senha; na API, correção de injeção de SQL e rotas novas protegidas por token.",
+      "Vitrine, busca sem acento, filtros e ordenação, com página de produto com cor, tamanho e ficha técnica.",
+      "\"Minha garagem\": o usuário escolhe a moto dele e o app mostra só as peças compatíveis.",
+      "Simulador de financiamento pela tabela Price com IOF e gráfico do saldo devedor mês a mês.",
+      "Carrinho salvo no aparelho, cupons e frete calculado pelo CEP, consultado de verdade na ViaCEP.",
+      "Checkout com Pix, cartão em até 12x, boleto ou financiamento, e pedido com linha do tempo de status.",
     ],
-    tech: ["React Native", "Expo", "Expo Router", "TypeScript", "NativeWind", "React Query", "Node.js", "Bitrix24", "Sankhya"],
-    url: "https://skinsales-demo.vercel.app",
-    urlLabel: "Abrir a demo",
-    video: { src: "/videos/skinsales.mp4", poster: "/videos/skinsales.jpg" },
+    tech: ["React Native", "Expo", "Expo Router", "TypeScript", "NativeWind", "Reanimated", "ViaCEP API"],
+    github: "https://github.com/HeitorBMarini/veltra-mx",
+    url: "https://veltra-mx.vercel.app",
+    urlLabel: "Abrir o app",
+    video: { src: "/videos/veltra-mx.mp4", poster: "/videos/veltra-mx.jpg" },
   },
   {
     slug: "pipeline-ia",
@@ -203,7 +204,7 @@ export function Projects() {
           Apps, sites para clientes e <em className="text-accent">projetos próprios.</em>
         </>
       }
-      intro="Todos publicados: dá para clicar e explorar. Nas demos do SkinSales, do Pipeline IA e do Painel SaaS, os dados de exemplo são fictícios."
+      intro="Todos publicados: dá para clicar e explorar. Na Veltra MX, no Pipeline IA e no Painel SaaS, os dados de exemplo são fictícios."
     >
       {/* Índice */}
       <Reveal>
