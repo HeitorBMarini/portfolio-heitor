@@ -65,7 +65,7 @@ export function About() {
         </Reveal>
 
         <Reveal delay={0.1} className="flex md:justify-end">
-          <div className="relative w-full max-w-sm">
+          <div className="relative w-full max-w-sm self-start">
             <div
               aria-hidden
               className="absolute -inset-px rounded-2xl"
