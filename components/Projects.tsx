@@ -44,6 +44,25 @@ export const projects: Project[] = [
     video: { src: "/videos/trilha.mp4", poster: "/videos/trilha.jpg" },
   },
   {
+    slug: "skinsales",
+    name: "SkinSales",
+    kind: "App mobile · ViBA Holding",
+    tagline: "O app de vendas do time comercial, refeito do zero com Expo: do catálogo à proposta enviada ao CRM e ao ERP, pelo celular.",
+    about:
+      "Os vendedores montavam propostas num app antigo, com regras de preço e pagamento espalhadas e a senha salva no aparelho. Reescrevi o app com React Native e Expo, mantendo as regras de negócio, corrigindo os bugs que achei no caminho e fechando falhas de segurança na API. A demo pública roda em modo demonstração, com dados fictícios.",
+    delivered: [
+      "Catálogo por tabela de preço com checagens do cliente na hora: inadimplência, regras de campanha, distribuidor e primeira compra.",
+      "Carrinho que continua salvo com o app fechado e simulador de pagamento com entrada, cartão, faturamento e financiamento com carência e IOF.",
+      "Proposta enviada direto ao Bitrix24 e ao Sankhya, com PDF gerado no aparelho para compartilhar com o cliente.",
+      "Dashboard com gráficos de vendas, ranking e inadimplência, tema claro e escuro e identidade visual de cada marca.",
+      "Login com JWT no armazenamento seguro do aparelho, sem guardar a senha; na API, correção de injeção de SQL e rotas novas protegidas por token.",
+    ],
+    tech: ["React Native", "Expo", "Expo Router", "TypeScript", "NativeWind", "React Query", "Node.js", "Bitrix24", "Sankhya"],
+    url: "https://skinsales-demo.vercel.app",
+    urlLabel: "Abrir a demo",
+    video: { src: "/videos/skinsales.mp4", poster: "/videos/skinsales.jpg" },
+  },
+  {
     slug: "pipeline-ia",
     name: "Pipeline IA",
     kind: "Protótipo próprio · IA aplicada",
@@ -181,10 +200,10 @@ export function Projects() {
       eyebrow="Projetos"
       title={
         <>
-          Produto, sites para clientes e <em className="text-accent">projetos próprios.</em>
+          Apps, sites para clientes e <em className="text-accent">projetos próprios.</em>
         </>
       }
-      intro="Todos publicados: dá para clicar e explorar. Nas demos do Pipeline IA e do Painel SaaS, os dados de exemplo são fictícios."
+      intro="Todos publicados: dá para clicar e explorar. Nas demos do SkinSales, do Pipeline IA e do Painel SaaS, os dados de exemplo são fictícios."
     >
       {/* Índice */}
       <Reveal>

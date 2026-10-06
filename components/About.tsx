@@ -4,7 +4,7 @@ import { Section, Reveal } from "@/components/Section";
 const highlights = [
   { label: "Formação", value: "Análise e Desenvolvimento de Sistemas na FIAP" },
   { label: "Onde", value: "São Paulo, Brasil" },
-  { label: "Foco", value: "Sistemas internos, portais B2B e integrações com ERP e CRM" },
+  { label: "Foco", value: "Sistemas internos, apps mobile, portais B2B e integrações com ERP e CRM" },
 ];
 
 export function About() {
@@ -35,6 +35,12 @@ export function About() {
             antes era feito à mão e acompanho tudo em dashboards de
             monitoramento com <span className="text-fg">Grafana</span> e{" "}
             <span className="text-fg">Prometheus</span>.
+          </p>
+          <p>
+            No mobile, desenvolvo com{" "}
+            <span className="text-fg">React Native e Expo</span>: reescrevi o
+            app de vendas do time comercial, com catálogo, simulação de
+            pagamento e proposta enviada ao CRM e ao ERP direto do celular.
           </p>
           <p>
             Antes disso, passei dois anos na Doutores da Web fazendo sites com

@@ -97,7 +97,8 @@ export function Hero() {
           <motion.p {...fade(0.55)} className="text-muted leading-relaxed max-w-xl mb-10">
             Desenvolvo aplicações web e mobile com{" "}
             <span className="text-fg">Next.js</span>,{" "}
-            <span className="text-fg">React</span> e{" "}
+            <span className="text-fg">React</span>,{" "}
+            <span className="text-fg">React Native</span> e{" "}
             <span className="text-fg">Node.js</span>, integro sistemas via APIs
             REST, automatizo processos e crio soluções com{" "}
             <span className="text-fg">IA generativa</span>, com dados em SQL e
