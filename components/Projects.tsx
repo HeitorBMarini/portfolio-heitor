@@ -123,6 +123,26 @@ export const projects: Project[] = [
     video: { src: "/videos/weather-app.mp4", poster: "/videos/weather-app.jpg" },
   },
   {
+    slug: "busca-cep",
+    name: "Busca CEP",
+    kind: "Projeto pessoal · APIs públicas",
+    tagline: "Qualquer CEP do Brasil no mapa, o CEP de uma rua e a distância entre dois CEPs.",
+    about:
+      "Comecei como um buscador simples e refiz do zero com o que uso hoje: as consultas passam por rotas no servidor, com cache e uma API de reserva para quando a principal cai. Na tela, o endereço vem completo, com mapa, DDD e código IBGE.",
+    delivered: [
+      "Busca automática ao completar o CEP, com máscara, atalho de teclado e histórico das últimas buscas.",
+      "Reserva automática entre ViaCEP e BrasilAPI e cache no servidor com use cache do Next 16; erros de serviço não ficam em cache.",
+      "Mapa da rua (ou do centro da cidade) pelo OpenStreetMap, sem biblioteca de mapas.",
+      "Busca reversa: estado, cidade e rua viram a lista de CEPs com bairro e faixa de numeração.",
+      "Distância em linha reta entre dois CEPs, link compartilhável e tema claro e escuro.",
+    ],
+    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "ViaCEP", "BrasilAPI", "OpenStreetMap"],
+    github: "https://github.com/HeitorBMarini/busca-cep",
+    url: "https://busca-cep-steel.vercel.app",
+    urlLabel: "Abrir o app",
+    video: { src: "/videos/busca-cep.mp4", poster: "/videos/busca-cep.jpg" },
+  },
+  {
     slug: "safed",
     name: "SafeD",
     kind: "Site para cliente",
@@ -169,21 +189,6 @@ export const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/HeitorBMarini/souza-martins",
     url: "https://serralheriasm.com.br/",
-  },
-  {
-    slug: "busca-cep",
-    name: "Busca CEP",
-    kind: "Open source",
-    tagline: "Endereço completo a partir do CEP, com validação.",
-    about:
-      "Ferramenta pequena e direta que consulta a ViaCEP e devolve o endereço completo.",
-    delivered: [
-      "Validação do formato do CEP antes de chamar a API.",
-      "Mensagens claras para CEP inválido ou não encontrado.",
-    ],
-    tech: ["React", "TypeScript", "ViaCEP API"],
-    github: "https://github.com/HeitorBMarini/busca-cep",
-    url: "https://busca-cep-steel.vercel.app",
   },
 ];
 
