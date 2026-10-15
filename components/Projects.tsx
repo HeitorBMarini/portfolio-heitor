@@ -203,7 +203,6 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="Projetos"
       title={
         <>
           Apps, sites para clientes e <em className="text-accent">projetos próprios.</em>
@@ -213,46 +212,35 @@ export function Projects() {
     >
       {/* Índice */}
       <Reveal>
-        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line rounded-2xl overflow-hidden mb-16">
-          {projects.map((p, i) => (
+        <ul className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden mb-16">
+          {projects.map((p) => (
             <li key={p.slug} className="bg-bg">
               <a
                 href={`#project-${p.slug}`}
                 className="group block h-full p-5 hover:bg-surface transition-colors"
               >
-                <span className="font-mono text-xs text-faint">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="font-serif text-xl text-fg mt-2 group-hover:text-accent transition-colors">
+                <p className="font-serif text-xl text-fg group-hover:text-accent transition-colors">
                   {p.name}
                 </p>
                 <p className="text-xs text-muted mt-1 leading-relaxed">{p.kind}</p>
               </a>
             </li>
           ))}
-        </ol>
+        </ul>
       </Reveal>
 
       <div className="space-y-6">
-        {projects.map((p, i) => (
+        {projects.map((p) => (
           <Reveal key={p.slug}>
             <Spotlight
               id={`project-${p.slug}`}
               className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-14 rounded-2xl border border-line bg-surface p-6 md:p-10"
             >
               <div className="flex flex-col min-w-0">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="font-mono text-sm text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-px w-8 bg-line" />
-                  <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-faint">
-                    {p.kind}
-                  </span>
-                </div>
-                <h3 className="font-serif text-4xl md:text-5xl text-fg leading-none mb-4">
+                <h3 className="font-serif text-4xl md:text-5xl text-fg leading-none mb-2">
                   {p.name}
                 </h3>
+                <p className="text-sm font-medium text-accent mb-4">{p.kind}</p>
                 <p className="text-lg text-fg/85 leading-snug mb-8">{p.tagline}</p>
 
                 {/* Janela de navegador estilizada */}

@@ -92,7 +92,6 @@ export function Skills() {
   return (
     <Section
       id="skills"
-      eyebrow="Tecnologias"
       title={
         <>
           O que uso, <em className="text-accent">e onde usei.</em>

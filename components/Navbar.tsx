@@ -32,7 +32,7 @@ function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={theme === "light" ? "Usar tema escuro" : "Usar tema claro"}
-      className="w-9 h-9 grid place-items-center rounded-full border border-line text-muted hover:text-fg hover:border-accent/50 transition-colors cursor-pointer"
+      className="w-11 h-11 grid place-items-center rounded-full border border-line text-muted hover:text-fg hover:border-accent/50 transition-colors cursor-pointer"
     >
       {theme === "light" ? <Moon size={15} /> : <Sun size={15} />}
     </button>
@@ -65,7 +65,7 @@ export function Navbar() {
           <a
             href="#"
             aria-label="Início"
-            className="w-9 h-9 grid place-items-center rounded-md bg-fg text-bg font-serif text-base leading-none"
+            className="w-10 h-10 grid place-items-center rounded-md bg-fg text-bg font-serif text-base leading-none"
           >
             HM
           </a>
@@ -85,7 +85,7 @@ export function Navbar() {
           <div className="flex items-center gap-2 md:ml-2 ml-auto">
             <ThemeToggle />
             <button
-              className="md:hidden w-9 h-9 grid place-items-center text-muted hover:text-fg transition-colors"
+              className="md:hidden w-11 h-11 grid place-items-center text-muted hover:text-fg transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}

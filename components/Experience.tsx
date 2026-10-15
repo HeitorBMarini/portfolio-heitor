@@ -68,7 +68,6 @@ export function Experience() {
   return (
     <Section
       id="experience"
-      eyebrow="Experiência"
       title={
         <>
           Do front-end à <em className="text-accent">infraestrutura.</em>

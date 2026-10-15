@@ -4,13 +4,12 @@ import { motion } from "framer-motion";
 
 type Props = {
   id: string;
-  eyebrow: string;
   title: React.ReactNode;
   intro?: React.ReactNode;
   children: React.ReactNode;
 };
 
-export function Section({ id, eyebrow, title, intro, children }: Props) {
+export function Section({ id, title, intro, children }: Props) {
   return (
     <section id={id} className="px-6 py-24 md:py-32 border-t border-line">
       <div className="max-w-6xl mx-auto">
@@ -21,9 +20,6 @@ export function Section({ id, eyebrow, title, intro, children }: Props) {
           transition={{ duration: 0.5 }}
           className="mb-14 max-w-2xl"
         >
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">
-            {eyebrow}
-          </p>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.08] text-fg">
             {title}
           </h2>

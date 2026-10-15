@@ -11,7 +11,6 @@ export function About() {
   return (
     <Section
       id="about"
-      eyebrow="Sobre"
       title={
         <>
           Levo uma regra de negócio{" "}

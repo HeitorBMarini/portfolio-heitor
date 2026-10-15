@@ -10,7 +10,7 @@
   --line: #1c2236;
   --fg: #eef2f8;
   --muted: #94a3b8;
-  --faint: #64748b;
+  --faint: #7d8aa1;
   --accent: #60a5fa;
   --accent-fg: #07070f;
   --accent-soft: rgba(59, 130, 246, 0.14);
@@ -24,7 +24,7 @@
   --line: #dde3ee;
   --fg: #0b1020;
   --muted: #475569;
-  --faint: #64748b;
+  --faint: #566275;
   --accent: #2563eb;
   --accent-fg: #ffffff;
   --accent-soft: rgba(37, 99, 235, 0.1);
@@ -57,6 +57,13 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* foco de teclado no tom da marca (o padrão do navegador não pertence ao design) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 ::selection {

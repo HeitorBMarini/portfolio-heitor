@@ -1,3 +1,5 @@
+import { ArrowUp } from "lucide-react";
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -8,8 +10,9 @@ export function Footer() {
           <span className="font-serif text-fg text-base">Heitor Borba Marini</span>
           <span className="mx-2 text-faint">·</span>© {year}
         </p>
-        <a href="#" className="text-faint hover:text-accent transition-colors">
-          Voltar ao topo ↑
+        <a href="#" className="inline-flex items-center gap-1.5 text-faint hover:text-accent transition-colors">
+          Voltar ao topo
+          <ArrowUp size={14} />
         </a>
       </div>
     </footer>

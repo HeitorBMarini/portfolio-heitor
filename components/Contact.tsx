@@ -22,9 +22,6 @@ export function Contact() {
     <section id="contact" className="px-6 py-24 md:py-32 border-t border-line">
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4">
-            Contato
-          </p>
           <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1] text-fg max-w-3xl">
             Tem um sistema para construir ou integrar?{" "}
             <em className="text-accent">Vamos conversar.</em>
@@ -38,7 +35,7 @@ export function Contact() {
             </p>
             <a
               href={`mailto:${EMAIL}`}
-              className="block font-serif text-2xl sm:text-3xl text-fg hover:text-accent transition-colors break-all"
+              className="block font-serif text-[clamp(1.25rem,5.6vw,1.875rem)] text-fg hover:text-accent transition-colors [overflow-wrap:anywhere]"
             >
               {EMAIL}
             </a>

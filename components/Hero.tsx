@@ -70,21 +70,18 @@ export function Hero() {
 
       <div className="relative w-full max-w-6xl mx-auto">
         <div className="max-w-2xl">
-          <motion.p
-            {...fade(0)}
-            className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-7"
-          >
-            <span className="relative flex w-2 h-2">
-              <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-60" />
-              <span className="relative w-2 h-2 rounded-full bg-accent" />
-            </span>
-            Desenvolvedor Full Stack · São Paulo
-          </motion.p>
-
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl leading-[0.95] tracking-tight text-fg mb-8">
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl leading-[0.95] tracking-tight text-fg mb-5">
             <RevealLine delay={0.1}>Heitor</RevealLine>
             <RevealLine delay={0.22}>Marini</RevealLine>
           </h1>
+
+          <motion.p {...fade(0.35)} className="inline-flex items-center gap-2.5 text-sm font-semibold text-accent mb-8">
+            <span className="relative flex w-2 h-2" aria-hidden>
+              <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-60 motion-reduce:hidden" />
+              <span className="relative w-2 h-2 rounded-full bg-accent" />
+            </span>
+            Desenvolvedor Full Stack em São Paulo
+          </motion.p>
 
           <motion.p
             {...fade(0.45)}
